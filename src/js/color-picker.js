@@ -1,10 +1,6 @@
 (function () {
     'use strict';
 
-    var scripts = document.getElementsByTagName("script");
-    var currentScriptPath = scripts[scripts.length - 1].src;
-    var basePath = currentScriptPath.substring(0, currentScriptPath.lastIndexOf('/') + 1) + '..';
-
     angular.module('angularColorPicker', ['ngDialog'])
         .directive('colorPicker', ['$compile', '$timeout', '$http', function ($compile, $timeout, $http) {
             return {
@@ -12,7 +8,7 @@
                 replace: true,
                 require: 'ngModel',
                 scope: {color: '@'},
-                templateUrl: basePath + '/templates/color-picker.html',
+                templateUrl: '/static/bower_components/angular-color-picker/src/templates/color-picker.html',
                 link: function ($scope, element, attrs, ngModel) {
                     $scope.init = function () {
                         $scope.color = ngModel.$viewValue;
