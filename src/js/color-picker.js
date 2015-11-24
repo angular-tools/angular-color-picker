@@ -7,7 +7,7 @@
                 restrict: 'A',
                 replace: true,
                 require: 'ngModel',
-                scope: {color: '@'},
+                scope: {color: '@', dropup: '@'},
                 templateUrl: '/static/bower_components/angular-color-picker/src/templates/color-picker.html',
                 link: function ($scope, element, attrs, ngModel) {
                     $scope.init = function () {
